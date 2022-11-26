@@ -1,0 +1,25 @@
+services:
+  spring:
+    image: 'ksimaliza/spring:0.4'
+    build:
+      context: https://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@github.com/ksimaliza/backendEvaluacion01.git#main      
+      dockerfile: Dockerfile
+    expose:
+      - "8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbfacturaups.postgres.database.azure.com:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=ksimaliza
+      - SPRING_DATASOURCE_PASSWORD=prueba87#
+  angular:
+    image: 'ksimaliza/angular:0.4'
+    container_name: angular-service
+    build:
+      context: https://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@github.com/ksimaliza/frontEndEvaluacion.git#main       
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - spring
+volumes:
+  db-data:

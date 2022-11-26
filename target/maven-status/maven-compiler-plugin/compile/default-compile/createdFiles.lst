@@ -1,0 +1,10 @@
+com\venta\venta\repository\PersonaRepository.class
+com\venta\venta\service\FacturaService.class
+com\venta\venta\VentaApplication.class
+com\venta\venta\controller\FacturaController.class
+com\venta\venta\model\Persona.class
+com\venta\venta\repository\FacturaRepository.class
+com\venta\venta\dto\PersonaDireccionDTO.class
+com\venta\venta\model\Factura.class
+com\venta\venta\service\PersonaService.class
+com\venta\venta\controller\PersonaController.class
