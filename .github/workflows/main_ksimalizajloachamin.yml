@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2a5038f41ccd44e68d88f7469936bc5b }}/spring:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2a5038f41ccd44e68d88f7469936bc5b }}/spring:lasted
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'ksimalizajloachamin'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_22c05c42c9ff4e21afbe77a8a39d630a }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2a5038f41ccd44e68d88f7469936bc5b }}/spring:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2a5038f41ccd44e68d88f7469936bc5b }}/spring:lasted'
